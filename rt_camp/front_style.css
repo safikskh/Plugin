@@ -1,0 +1,14 @@
+.contri_main {
+    background-color: #dad8d8;
+    padding: 20px;
+}
+.contri_main .title {
+    font-size: 30px;
+}
+.cstm_contributor {
+    display: inline-flex;
+    width: 100%;
+}
+.auth_url {
+    margin-left: 20px;
+}
