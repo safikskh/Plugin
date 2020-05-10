@@ -1,0 +1,21 @@
+.column {
+  float: left;
+  width: 32.33%;
+  padding: 5px;
+  position: relative;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+img.close-btn {
+  position: absolute;
+  height: 20px;
+  right: 0;
+  top: -9px;
+  left: 366px;
+  cursor: pointer; 
+}
