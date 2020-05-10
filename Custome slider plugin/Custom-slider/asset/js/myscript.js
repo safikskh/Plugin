@@ -35,12 +35,6 @@ jQuery(document).ready(function($){
                 //$('.sortable').append('<input id="myplugin-image-input' +uploaded_image[i].id +'" type="hidden" name="myplugin_attachment_id_array[]"  value="' + uploaded_image[i].id + '">');
                 $('#sortable').append('<div class="column"><img class="close-btn" src="'+plugin_dir.path+'close-icon.png" alt="Snow" style=""><img src="'+uploaded_image[i].attributes.url+'" alt="Snow" style="width:100%"><input id="img_' +uploaded_image[i].id +'" type="hidden" name="myplugin_attachment_id_array[]"  value="' + uploaded_image[i].id + '"><input class="order_id" name="myplugin_attachment_id_order[]" type="hidden" value="'+order+'"></div>');
            }
-            // We convert uploaded_image to a JSON object to make accessing it easier
-            // Output to the console uploaded_image
-            // console.log(uploaded_image);
-            // var image_url = uploaded_image.toJSON().url;
-            // // Let's assign the url value to the input field
-            // $('#image_url').val(image_url);
         });
     });
 
@@ -52,9 +46,8 @@ function updateOrderIndexes()
 {
   // Update the order index on each item
   var orderIndex = 1;
-  $("#sortable .column").each( function() {
-    console.log($(this))
-    $(this).find(".order_id").val(orderIndex);
+  jQuery("#sortable .column").each( function() {
+    jQuery(this).find(".order_id").val(orderIndex);
     orderIndex++;
   });    
 }
