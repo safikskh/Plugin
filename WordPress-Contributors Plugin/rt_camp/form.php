@@ -1,7 +1,10 @@
 <?php 
 $users = get_users();
 $user_names = wp_list_pluck( $users, 'user_login' );
+$role = wp_list_pluck( $users, 'roles' );
+
 $my_meta = get_post_meta( $post->ID, 'hcf_author', true ); 
+
 $destination_array = explode(',', $my_meta);
 ?>
 <style>
@@ -18,12 +21,15 @@ $destination_array = explode(',', $my_meta);
 <div class="hcf_box">
     <p class="meta-options hcf_field">
         
-        <?php 
+        <?php
             foreach ($user_names as $key => $value) {
+                if($role[$key][0] == 'contributor')
+                {
             ?>
-                <input type="checkbox" name="hcf_author[]" <?php if($value == $destination_array[$key]){ echo "checked"; } ?> value="<?=$value?>">
+                <input type="checkbox" name="hcf_author[]" <?php if(in_array($value, $destination_array)){ echo "checked"; } ?>  value="<?=$value?>">
                 <label for="hcf_author"><?php echo $value; ?></label>
             <?php
+                }
             }
         ?>
     </p>

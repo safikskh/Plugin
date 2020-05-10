@@ -10,7 +10,7 @@
 function wc_load_plugin_css() {
     $plugin_url = plugin_dir_url( __FILE__ );
 
-    wp_enqueue_style( 'style1', $plugin_url . 'front_style.css' );
+    wp_enqueue_style( 'style1', $plugin_url . '/css/front_style.css' );
 }
 add_action( 'wp_enqueue_scripts', 'wc_load_plugin_css' );
 /**
