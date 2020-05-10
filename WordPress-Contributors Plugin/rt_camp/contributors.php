@@ -54,22 +54,24 @@ function like_content($content) {
 	{
 		$all_author = get_post_meta( $post->ID, 'hcf_author', true );
 		$author_array = explode(',', $all_author);
-			
-		$content .= "<div class='contri_main'>";
-		$content .= "<div class='title'>Contributors</div>";
-		foreach ($author_array as $value) {
-			$user = get_user_by('login',$value);
-			if($user)
-			{
-				$auth_url = get_author_posts_url( $user->ID );
-				$img_url = get_avatar_url($user->ID, ['size' => '51']);
-			}	
-			$content .= "<div class=\"cstm_contributor\">";
-			$content .= "<img src='". $img_url ."'>";
-			$content .= "<div class='auth_url'><a href='".$auth_url."'>".$value."</a></div>";
+		if(!empty($author_array))
+		{
+			$content .= "<div class='contri_main'>";
+			$content .= "<div class='title'>Contributors</div>";
+			foreach ($author_array as $value) {
+				$user = get_user_by('login',$value);
+				if($user)
+				{
+					$auth_url = get_author_posts_url( $user->ID );
+					$img_url = get_avatar_url($user->ID, ['size' => '51']);
+				}	
+				$content .= "<div class=\"cstm_contributor\">";
+				$content .= "<img src='". $img_url ."'>";
+				$content .= "<div class='auth_url'><a href='".$auth_url."'>".$value."</a></div>";
+				$content .= "</div>";
+			}
 			$content .= "</div>";
 		}
-		$content .= "</div>";
 	}
 		
 return $content;
