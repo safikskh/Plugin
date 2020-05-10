@@ -55,9 +55,12 @@ if ( isset( $_POST['submit_image_selector'] ) && isset( $_POST['image_attachment
     	        <th scope="row">Note Supported image format:</th>
     	        <td>.jpeg, .jpg, .png, .gif</td>
             </tr>
-             <tr valign="top">
+            <tr valign="top">
                 <th scope="row">Please use this shortcode for display slider:</th>
                 <td>[show_slider]</td>
+            </tr>
+            <tr valign="top">
+                <th scope="row">Drag image to change order of the images.</th>
             </tr>
         </table>
         

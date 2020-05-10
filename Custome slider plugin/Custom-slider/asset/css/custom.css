@@ -7,14 +7,18 @@
     object-fit: cover;
 }
 .single-item .slick-prev:before,.single-item .slick-next:before {
-    font-size: 30px;
+    font-size: 33px;
     color: black;
+}
+.single-item .slick-next {
+    right: 16px;
 }
 .single-item .slick-prev.slick-disabled:before,.single-item .slick-next.slick-disabled:before {
     opacity: 1;
 }
 .single-item .slick-prev {
-    left: -34px;
+    left: 5px;
+    z-index: 1;
 }
 .single-item .slick-dots li button:before {
     font-size: 30px;
